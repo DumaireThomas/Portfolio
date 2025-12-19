@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio - Thomas Dumaire</title>
+    <!-- Chargement de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Police Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Icônes (pour les liens de contact) -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        /* Style de base pour la police Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Gris clair pour le fond */
+        }
+        
+        /* Masquer toutes les "pages" par défaut */
+        .page-content {
+            display: none;
+        }
+
+        /* Afficher la page active */
+        .page-content.active {
+            display: block;
+        }
+
+        /* Effet de survol pour les cartes de projet */
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- ===== BARRE DE NAVIGATION ===== -->
+    <!-- Elle est fixe et gère la navigation entre les "pages" -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Votre Nom/Logo -->
+            <a href="#" class="nav-link text-2xl font-bold text-indigo-600" data-page="accueil">
+                Thomas Dumaire
+            </a>
+            
+            <!-- Liens de navigation (Desktop) -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="nav-link text-gray-700 hover:text-indigo-600" data-page="accueil">Accueil</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-indigo-600" data-page="parcours">Parcours</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-indigo-600" data-page="projets">Projets</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-indigo-600" data-page="contact">Contact</a>
+            </div>
+
+            <!-- Bouton Burger (Mobile) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menu Mobile (caché par défaut) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="#" class="nav-link block px-6 py-3 text-gray-700 hover:bg-indigo-50" data-page="accueil">Accueil</a>
+            <a href="#" class="nav-link block px-6 py-3 text-gray-700 hover:bg-indigo-50" data-page="parcours">Parcours</a>
+            <a href="#" class="nav-link block px-6 py-3 text-gray-700 hover:bg-indigo-50" data-page="projets">Projets</a>
+            <a href="#" class="nav-link block px-6 py-3 text-gray-700 hover:bg-indigo-50" data-page="contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- ===== CONTENEUR PRINCIPAL POUR LES PAGES ===== -->
+    <main class="container mx-auto p-6 md:p-10">
+
+        <!-- ======================================= -->
+        <!-- PAGE 1: ACCUEIL (PRÉSENTATION DE SOI) -->
+        <!-- ======================================= -->
+        <section id="page-accueil" class="page-content active">
+            <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg text-center">
+                <div class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-indigo-600 mb-6">
+                    <!-- Mettez une photo de vous ici -->
+                    <img src="https://i.imgur.com/VluE5r1.png" alt="Photo de Thomas Dumaire" class="w-full h-full object-cover">
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Bonjour, je suis Thomas Dumaire</h1>
+                <p class="text-xl text-indigo-600 font-medium mb-8"> Étudiant en BUT Informatique, informaticien en devenir</p>
+
+                <!-- SECTION: PRÉSENTATION DE SOI -->
+                <div class="max-w-3xl mx-auto text-left space-y-4 text-gray-700 text-lg">
+                    <h2 class="text-2xl font-semibold text-gray-800 border-b-2 border-indigo-200 pb-2 mb-4">À propos de moi</h2>
+                    <p>
+                        <!-- **À REMPLIR (Traits de personnalité)** -->
+                        <!-- Rédigez ici votre paragraphe de présentation. -->
+                        <!-- Mettez en avant vos traits de personnalité : curieux, rigoureux, créatif, bon esprit d'équipe... -->
+                        <!-- Exemple: "Passionné par la résolution de problèmes et la création d'expériences numériques, je suis quelqu'un de [Trait 1] et [Trait 2]. J'aborde chaque nouveau défi avec..." -->
+                        <h3><strong>1. Qui je suis :</strong></h3>
+                        <p>    
+                            Je suis Thomas Dumaire, étudiant en BUT informatique à L'IUT de Montpellier. Je suis quelqu'un de curieux, j'ai toujours été attiré par l'informatique, et plus précisément le côté hardware de l'informatique : architectures matérielles, installation de machines, maintenance, etc... Mais je suis également attiré par le côté software, qui tourne plus autour de la base de données, de la cryptographie et du chiffrement, ainsi que de la configuration et installation réseau.
+                        </p>
+                        <br><h3><strong>2. Ce que j'ai fait :</strong></h3>
+                        <p>
+                            J'ai participé à plusieurs projets lors de mon parcours académique. J'ai participé à des projets scolaires en groupe ainsi qu'à un projet pour moi-même : Moi et mon groupe avons d'abord développé un petit jeu de cartes pokémon en java, en plus d'avoir fait l'entièreté de l'interface en javaFX. Nous développons également une application d'enchères sécurisées, en java également, en se servant de l'API Rest pour l'authentification et la sécurité, ainsi que des sockets ssl, utilisant donc le chiffrement SSL pour sécuriser les échanges. J'ai moi-même participé à l'implémentation de ces sockets, ainsi q'un peu de développement logique de l'application. J'ai fait, seul, une base de données, qui pouvait recevoir des données importées via CSV, et j'y ai ajouté quelques vues pour pouvoir accéder facilement à certaines données, le tout en utilisant le langage SQL dans une base de données sous Oracle MySQL, que j'ai créée seul.
+                            <br><br>- Plus de détails dans la partie <a href="#" class="nav-link hover:text-indigo-600" data-page="projets">Projets</a>
+                        </p>
+                        <br><h3><strong>3. Ce que j'ai envie de faire + points forts :</strong></h3>
+                        <p>
+                            Mon objectif final est de me réorienter plutôt dans le côté plus technique et manuel de l'informatique plutôt que la programmation, au fur et à mesure du temps je me suis rendu compte que ce n'était pas ce qui me plaisait le plus. J'aimerais donc m'orienter vers des métiers comme administrateur systèmes et réseaux, ou encore technicien de maintenance informatique. Mes points forts sont ma curiosité, ma rigueur et mon esprit d'analyse, qui me permettent de m'adapter rapidement à de nouveaux environnements et de résoudre efficacement les problèmes techniques. J'ai également un peu d'expérience avec la maintenance d'ordinateur, réparant moi-même des ordinateurs pour ma famille ou des amis.    
+                        </p>
+                </div>
+
+                <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#" class="nav-link bg-indigo-600 text-white font-medium px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition duration-300" data-page="projets">
+                        Voir mes Projets
+                    </a>
+                    <a href="#" class="nav-link bg-white text-indigo-600 font-medium px-6 py-3 rounded-lg shadow border border-indigo-600 hover:bg-indigo-50 transition duration-300" data-page="parcours">
+                        Consulter mon parcours
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================= -->
+        <!-- PAGE 2: PARCOURS (CV) -->
+        <!-- ======================================= -->
+        <section id="page-parcours" class="page-content">
+            <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 border-b-2 border-indigo-200 pb-4">Mon Parcours</h1>
+                
+                <!-- SECTION: PARCOURS ACADÉMIQUE -->
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Parcours Académique</h2>
+                <div class="space-y-6">
+                    <!-- **À REMPLIR** : Ajoutez vos diplômes/formations ici. Copiez/collez ce bloc pour chaque étape. -->
+                    
+                    <!-- Étape 1: BUT Info -->
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">BUT</div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-semibold">Bachelor Universitaire de Technologie Informatique</h3>
+                            <p class="text-gray-600">Institut Universitaire de Technologie de Montpellier-Sète | 2024 - 2027 (en cours)</p>
+                            <p class="mt-2 text-gray-700">
+                                <!-- Décrivez brièvement la formation, votre parcours (RACDV, DACS...), les modules importants... -->
+                                <strong>Objectif de formation :</strong> savoir s'adapter, être polyvalent, être capable de concevoir, développer et administrer des solutions numériques complètes.
+                                Le parcours Déploiement d'Applications Communicantes et Sécurisées met l'accent sur le développement logiciel (principalement en Java), l'administration système et réseau (Linux, Docker, virtualisation), les méthodes DevOps et l'automatisation (Git, CI/CD, Bash) ainsi que la sécurisation et la gestion d'environnements cloud.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Étape 2: Baccalauréat -->
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">BAC</div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-semibold">Baccalauréat Général</h3>
+                            <p class="text-gray-600">Lycée Marc Bloch - Sérignan | 2024</p>
+                            <p class="mt-2 text-gray-700">
+                                <!-- Spécialités, options... -->
+                                Spécialités : NSI, Mathématiques.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ajoutez d'autres étapes si nécessaire (stages, expériences pro...) -->
+                </div>
+
+                <!-- SECTION: CV À TÉLÉCHARGER -->
+                <div class="mt-12 text-center">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Mon CV</h2>
+                    <p class="text-gray-700 mb-6">Téléchargez mon CV à jour pour plus de détails sur mon profil.</p>
+                    
+                    <!-- **IMPORTANT** : Remplacez "chemin/vers/votre/cv.pdf" par le lien réel vers votre CV hébergé. -->
+                    <a href="CV_Thomas_Dumaire.pdf" download="CV_DUMAIRE_Thomas.pdf" class="inline-block bg-indigo-600 text-white font-medium px-8 py-3 rounded-lg shadow hover:bg-indigo-700 transition duration-300">
+                        Télécharger mon CV (PDF)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================= -->
+        <!-- PAGE 3: Projets (GALERIE) -->
+        <!-- ======================================= -->
+        <section id="page-projets" class="page-content">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Mes Projets</h1>
+            <p class="text-lg text-gray-700 mb-8">
+                Voici une sélection de projets informatiques sur lesquels j'ai travaillé.
+            </p>
+
+            <!-- Grille des projets (Minimum 3) -->
+            <!-- **À REMPLIR** : Pour chaque projet, remplissez une "carte". -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- PROJET 1 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                    <!-- **Preuve Visuelle** : Remplacez par une image/GIF de votre projet (600x400) -->
+                    <img src="https://i.imgur.com/d2BRXEE.png" alt="Aperçu du Projet 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-2">Jeu de cartes Pokémon en Java/JavaFX</h2>
+                        <p class="text-gray-600 mb-4">
+                            <!-- Brève description / Contexte (ex: SAÉ S2, Nuit de l'Info...) -->
+                            Jeu de cartes Pokémon TCG développé en Java, avec interface JavaFX fonctionnant sur la boucle locale. 
+                        </p>
+                        <!-- Ce lien doit correspondre à l'ID de la page projet détaillée -->
+                        <a href="#" class="nav-link font-medium text-indigo-600 hover:text-indigo-800" data-page="projet-1">
+                            Voir les détails &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROJET 2 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                    <!-- **Preuve Visuelle** : Remplacez par une image/GIF de votre projet (600x400) -->
+                    <img src="https://i.imgur.com/fVoi6R5.png" alt="Aperçu du Projet 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-2">Application d'enchères "FairBid" en Java/JavaFX</h2>
+                        <p class="text-gray-600 mb-4">
+                            <!-- Brève description / Contexte (ex: Game Jam...) -->
+                            Application d'enchères sécurisées développée en Java, avec interface JavaFX, implémentation de l'api REST, ainsi que de la sécurisation SSL.
+                        </p>
+                        <!-- Ce lien doit correspondre à l'ID de la page projet détaillée -->
+                        <a href="#" class="nav-link font-medium text-indigo-600 hover:text-indigo-800" data-page="projet-2">
+                            Voir les détails &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROJET 3 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                    <!-- **Preuve Visuelle** : Remplacez par une image/GIF de votre projet (600x400) -->
+                    <img src="https://i.imgur.com/jgo2prk.png" alt="Aperçu du Projet 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-2">Base de données sous Oracle MySQL</h2>
+                        <p class="text-gray-600 mb-4">
+                            <!-- Brève description / Contexte (ex: Nuit de l'Info...) -->
+                            Base de données avec importation de données CSV, ajout de vues, plusieurs contraintes etc.
+                        </p>
+                        <!-- Ce lien doit correspondre à l'ID de la page projet détaillée -->
+                        <a href="#" class="nav-link font-medium text-indigo-600 hover:text-indigo-800" data-page="projet-3">
+                            Voir les détails &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ajoutez d'autres cartes de projet si nécessaire -->
+                <!--
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                    <img src="https://placehold.co/600x400/..." alt="Aperçu du Projet 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-2">[Nom du Projet 4]</h2>
+                        <p class="text-gray-600 mb-4">[Brève description]</p>
+                        <a href="#" class="nav-link font-medium text-indigo-600 hover:text-indigo-800" data-page="projet-4">
+                            Voir les détails &rarr;
+                        </a>
+                    </div>
+                </div>
+                -->
+            </div>
+        </section>
+
+        <!-- ======================================= -->
+        <!-- PAGE 4: DÉTAIL PROJET 1 (MODÈLE) -->
+        <!-- ======================================= -->
+        <!-- **À REMPLIR** : Copiez/collez cette section pour chaque projet (projet-2, projet-3...) -->
+        <!-- Assurez-vous de changer l'ID (ex: id="page-projet-1") -->
+        <section id="page-projet-1" class="page-content">
+            <!-- Bouton de retour -->
+            <a href="#" class="nav-link text-indigo-600 font-medium mb-6 inline-block" data-page="projets">
+                &larr; Retour aux Projets
+            </a>
+
+            <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg">
+                <!-- Titre du projet -->
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Jeu de cartes Pokémon en Java/JavaFX</h1>
+                <p class="text-xl text-gray-600 mb-8">Jeu de cartes Pokémon TCG développé en Java, avec interface JavaFX fonctionnant sur la boucle locale.</p>
+
+                <!-- SECTION: PREUVE DE Projet -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Preuve de Réalisation</h2>
+                    <!-- **À REMPLIR** : Insérez votre trace visuelle (image, GIF, ou iframe vidéo) -->
+                    <!-- Exemple Image: -->
+                    <img src="https://i.imgur.com/xp4ttlJ.png" alt="Preuve visuelle du Projet 1" class="w-full rounded-lg shadow-md mb-4">
+                    <!-- Exemple Iframe (Vidéo YouTube):
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/..." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full rounded-lg"></iframe>
+                    </div>
+                    -->
+                    
+                    <!-- Commentaire de la trace -->
+                    <p class="text-gray-700 italic text-center">
+                        <!-- **À REMPLIR** : Commentez la trace visuelle. -->
+                        Cette capture montre un bout du code, ici le HandSelector, qui permet de permuter les "mains" des joueurs, c'est à dire afficher le bon deck à l'écran.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Colonne principale (Contexte & Analyse) -->
+                    <div class="md:col-span-2 space-y-8">
+                        
+                        <!-- SECTION: ANALYSE (CONTEXTE) -->
+                        <div>
+                            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Contexte du Projet</h2>
+                            <p class="text-gray-700">
+                                <!-- **À REMPLIR** : Analysez en détail le contexte. -->
+                                <!-- (commande académique, contraintes, durée, équipe/seul, projet personnel...) -->
+                                Ce projet était un projet scolaire en groupe. L'objectif était de développé toute la logique du jeu, ainsi que l'interface graphique en environ 3 mois au total. 1 mois et demi pour la logique, rendre le jeu fonctionnel à 100%, et 1 mois et demi pour l'interface complète.
+                            </p>
+                        </div>
+
+                        <!-- SECTION: ANALYSE (COMPÉTENCES) -->
+                        <div>
+                            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Analyse des Compétences Développées</h2>
+                            <p class="text-gray-700 mb-4">
+                                <!-- **À REMPLIR** : Analysez les compétences développées (techniques et humaines). -->
+                                Ce projet m'a permis de m'habituer encore aux IDE, ainsi qu'à développer ma rigueur en programmation. J'ai également appris à trouver les bugs d'une application, à tester tout scénario possible, à creuse, comprendre le code de fonds en combles et l'optimiser, ainsi qu'également travailler en équipe
+                            </p>
+                            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Compétences travaillées</h2>
+                            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                                <!-- **À REMPLIR** : Listez les compétences -->
+                                <li>Développement back-end (Java, JavaFX)</li>
+                                <li>Gestion de projet - Chef d'équipe </li>
+                                <li>Travail en équipe</li>
+                            </ul>
+                            
+                            <!-- Si projet d'équipe, précisez votre rôle -->
+                            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Ma Contribution (si projet d'équipe)</h3>
+                            <p class="text-gray-700">
+                                <!-- **À REMPLIR (si pertinent)** -->
+                                Ayant été chef d'équipe sur ce projet, mon but était de m'assurer que tout le monde avance bien, que les tâches sont bien réparties, et que le projet avance dans les temps. J'ai également participé au développement de la logique du jeu, ainsi qu'à l'implémentation des cartes pokémon et de leur logique (attaques, effets, compétences, logique des decks etc).
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Colonne latérale (Infos Clés) -->
+                    <aside class="md:col-span-1 bg-gray-50 p-6 rounded-lg shadow-inner">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Infos Clés</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <!-- **À REMPLIR** -->
+                            <li><strong>Type :</strong> Projet Académique</li>
+                            <li><strong>Durée :</strong> 3 mois</li>
+                            <li><strong>Équipe :</strong> Équipe de 4</li>
+                            <li>
+                                <strong>Technologies:</strong>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <!-- **À REMPLIR** -->
+                                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">IntelliJ</span>
+                                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Gitlab</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================= -->
+        <!-- PAGE 5: DÉTAIL PROJET 2 -->
+        <!-- ======================================= -->
+        <section id="page-projet-2" class="page-content">
+            <!-- Bouton de retour -->
+            <a href="#" class="nav-link text-indigo-600 font-medium mb-6 inline-block" data-page="projets">
+                &larr; Retour aux Projets
+            </a>
+            <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg">
+                <!-- **À REMPLIR** : Suivez le modèle du "PROJET 1" -->
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Application d'enchères "FairBid" en Java/JavaFX</h1>
+                <p class="text-xl text-gray-600 mb-8">Jeu de cartes Pokémon TCG développé en Java, avec interface JavaFX fonctionnant sur la boucle locale.</p>
+                
+                <!-- PREUVE -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Preuve de Réalisation</h2>
+                    <img src="https://i.imgur.com/Dvzqbvo.png" alt="Preuve visuelle du Projet 2" class="w-full rounded-lg shadow-md mb-4">
+                    <p class="text-gray-700 italic text-center">La classe du CryptoManager. Elle permet de chiffre les informations transitant sur les sockets via le chiffrement ssl, ainsi que la création des clés publiques et privées.</p>
+                </div>
+
+                <!-- CONTENU -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Colonne principale -->
+                    <div class="md:col-span-2 space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Contexte du Projet</h2>
+                            <p class="text-gray-700">Le but du projet était de créer une application d'enchères à plis fermés, en Java/JavaFX, et de la sécuriser via des algorithmes de chiffrement, dont SSL, et bienôt BCrypt. Le projet est encore en cours.</p>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Analyse des Compétences Développées</h2>
+                            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                                <li>Gestion du stress (travail rapide et dans des délais limités, répartis en plusieurs Sprints)</li>
+                                <li>Travail via la méthode Agile (division des sessions de travail en sprints)</li>
+                                <li>Plus de rigueur en programmation, notamment en Java et JavaFX</li>
+                                <li>Implémentation de la sécurité SSL via des sockets sécurisés</li>
+                                <li>Utilisation de l'API REST pour l'authentification et la gestion des utilisateurs</li>
+                                <li>Travail en équipe</li>
+                            </ul>
+                            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Ma Contribution</h3>
+                            <p class="text-gray-700">Nous avons tous été, lors du projet, Scrum master et Produc-Owner sur les différents sprints. L'objectif était de motiver les membres de l'équipe, les écouter, les faire discuter, s'écouter entre eux, défendre leurs opinions. Lorsque j'étais développeur, j'ai notamment travaillé sur la classe du crypto manager, ainsi que sur l'interface, l'implémentation de différents endpoints pour l'api, les classes entitées, repository, ainsi que les gestion de toutes les erreurs possibles.</p>
+                        </div>
+                    </div>
+                    <!-- Colonne latérale -->
+                    <aside class="md:col-span-1 bg-gray-50 p-6 rounded-lg shadow-inner">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Infos Clés</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><strong>Type:</strong> Application d'enchères à plis fermés</li>
+                            <li><strong>Durée:</strong> En cours</li>
+                            <li><strong>Équipe:</strong> Équipe de 4</li>
+                            <li>
+                                <strong>Technologies:</strong>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">IntelliJ (Java, JavaFX)</span>
+                                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Gitlab</span>
+                                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">PhpMyAdmin</span>
+                                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">API Rest</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================= -->
+        <!-- PAGE 6: DÉTAIL PROJET 3 -->
+        <!-- ======================================= -->
+        <section id="page-projet-3" class="page-content">
+            <!-- Bouton de retour -->
+            <a href="#" class="nav-link text-indigo-600 font-medium mb-6 inline-block" data-page="projets">
+                &larr; Retour aux Projets
+            </a>
+            <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg">
+                <!-- **À REMPLIR** : Suivez le modèle du "PROJET 1" -->
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Base de données sous Oracle MySQL</h1>
+                
+                <!-- PREUVE -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Preuve de Réalisation</h2>
+                    <img src="https://i.imgur.com/cJsmA9D.png" alt="Preuve visuelle du Projet 3" class="w-full rounded-lg shadow-md mb-4">
+                    <p class="text-gray-700 italic text-center">Morceau du script de création des tables de la base de données.</p>
+                </div>
+
+                <!-- CONTENU -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Colonne principale -->
+                    <div class="md:col-span-2 space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Contexte du Projet</h2>
+                            <p class="text-gray-700">Le projet consistait à créer une base de données complète permettant d'accueillir des données importées via des fichiers CSV. Le projet était en groupe, mais j'ai fait la totalité de la base de données, seul.</p>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Analyse des Compétences Développées</h2>
+                            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                                <li>Apprentissage de la modélisation de bases de données relationnelles</li>
+                                <li>Gestion de l'importation de données via CSV</li>
+                                <li>Écriture de requêtes SQL complexes pour l'insertion et la vérification des données</li>
+                                <li>Création de vues pour faciliter l'accès aux données</li>
+                                <li>Utilisation de DBeaver</li>
+                                <li>Gestion du stress malgré une équipe peu coopérative, malgré les avertissements et demandes</li>
+                            </ul>
+                            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Ma Contribution</h3>
+                            <p class="text-gray-700">Je ne devais que m'occuper du script de création de tables et de quelques vues, le contexte étant déjà donné, il ne manquait que la base de données. Or, j'ai au final fait l'entièreté du script de création de tables, conception du schéma relationnel, création des vues, scripts d'importation des données ainsi que des scripts de vérification des données. Etant seul, je n'ai pas pu tout terminer efficacement, tout a été fait mais certaines choses ne marchaient pas, même si pour une personne seule, j'ai fait le travail de 3 personnes.</p>
+                        </div>
+                    </div>
+                    <!-- Colonne latérale -->
+                    <aside class="md:col-span-1 bg-gray-50 p-6 rounded-lg shadow-inner">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Infos Clés</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><strong>Type:</strong> Projet de base de données</li>
+                            <li><strong>Durée:</strong> Plusieurs semaines</li>
+                            <li><strong>Équipe:</strong> Travail de groupe (finalement individuel)</li>
+                            <li>
+                                <strong>Technologies:</strong>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">SQL</span>
+                                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">DBeaver</span>
+                                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Looping (Modèles E/A)</span>
+                                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Github</span>
+                                </div>
+                            </li>
+                            <li class="pt-4">
+                                <a href="https://github.com/DumaireThomas/Database" target="_blank" rel="noopener noreferrer" class="font-medium text-indigo-600 hover:text-indigo-800">
+                                    Voir le code (GitHub) &rarr;
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======================================= -->
+        <!-- PAGE 7: CONTACT -->
+        <!-- ======================================= -->
+        <section id="page-contact" class="page-content">
+            <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg max-w-3xl mx-auto">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Contact</h1>
+                
+                <p class="text-lg text-gray-700 text-center mb-10">
+                    N'hésitez pas à me contacter par email ou à consulter mes profils professionnels.
+                </p>
+
+                <div class="flex flex-col md:flex-row justify-center gap-8">
+                    <!-- Coordonnées -->
+                    <div class="flex-1 space-y-6">
+                        <h2 class="text-2xl font-semibold text-gray-800">Mes Coordonnées</h2>
+                        <div class="flex items-center space-x-4">
+                            <ion-icon name="mail-outline" class="text-3xl text-indigo-600"></ion-icon>
+                            <div>
+                                <h3 class="font-semibold text-gray-700">Email</h3>
+                                <!-- **À REMPLIR** -->
+                                <a href="mailto:[votre.email@exemple.com]" class="text-indigo-600 hover:underline">thomas.dumaire3489@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <ion-icon name="location-outline" class="text-3xl text-indigo-600"></ion-icon>
+                            <div>
+                                <h3 class="font-semibold text-gray-700">Localisation</h3>
+                                <!-- **À REMPLIR** -->
+                                <p class="text-gray-600">Montpellier, France</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Réseaux Sociaux Professionnels -->
+                    <div class="flex-1 space-y-6">
+                        <h2 class="text-2xl font-semibold text-gray-800">Mes Réseaux</h2>
+                        <!-- **À REMPLIR** : Remplacez les liens (href) -->
+                        <a href="https://www.linkedin.com/in/thomas-dumaire/" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 text-gray-700 hover:text-indigo-600 group">
+                            <ion-icon name="logo-linkedin" class="text-3xl text-blue-700"></ion-icon>
+                            <span class="font-medium group-hover:underline">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/DumaireThomas" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 text-gray-700 hover:text-indigo-600 group">
+                            <ion-icon name="logo-github" class="text-3xl text-gray-800"></ion-icon>
+                            <span class="font-medium group-hover:underline">GitHub</span>
+                        </a>
+                        <a href="https://gitlabinfo.iutmontp.univ-montp2.fr/dumairet" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 text-gray-700 hover:text-indigo-600 group">
+                            <ion-icon name="logo-gitlab" class="text-3xl text-orange-500"></ion-icon>
+                            <span class="font-medium group-hover:underline">GitLab</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== PIED DE PAGE ===== -->
+    <footer class="bg-white shadow-inner mt-12">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-600">
+            <p>&copy; 2025 Thomas DUMAIRE. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPT DE NAVIGATION ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page-content');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Fonction pour afficher une page
+            function showPage(pageId) {
+                // Masquer toutes les pages
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+
+                // Afficher la page demandée
+                const activePage = document.getElementById(pageId);
+                if (activePage) {
+                    activePage.classList.add('active');
+                }
+
+                // Faire défiler vers le haut de la page
+                window.scrollTo(0, 0);
+
+                // Fermer le menu mobile après avoir cliqué
+                mobileMenu.classList.add('hidden');
+            }
+
+            // Gérer les clics sur les liens de navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Empêcher le comportement de lien par défaut
+                    const pageId = this.getAttribute('data-page');
+                    if (pageId) {
+                        showPage('page-' + pageId);
+                    }
+                });
+            });
+
+            // Gérer le bouton du menu mobile
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Afficher la page d'accueil par défaut au chargement
+            showPage('page-accueil');
+        });
+    </script>
+
+</body>
+</html>
